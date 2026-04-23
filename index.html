@@ -223,4 +223,21 @@ function back(){show('listView');}
 
 function show(v){
 ['listView','entryView','formView'].forEach(x=>{
-document
+document.getElementById(x).style.display=(x===v?'block':'none');
+});
+}
+
+function unlock(){
+let ans=localStorage.getItem('pass')||'2802';
+if(riddleInput.value===ans){
+lock.style.display='none';
+}else{
+alert('The diary rejects you...');
+}
+}
+
+render();
+</script>
+
+</body>
+</html>
